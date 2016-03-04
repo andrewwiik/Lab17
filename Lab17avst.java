@@ -110,10 +110,14 @@ class Test
 	// returns n1 raised to the n2 power
 	public static int pow(int n1, int n2)
 	{	
-		if (n2 == 1) return n1;
-		else {
-			return (int) Math.pow(n1*n1, n2 - 1);
-		}
+		if (n2 < 0) {
+	        return 0;
+	    }
+	    if (n2 == 0) {
+	        return 1;
+	    } else {
+	        return n1 * pow(n1, n2 - 1);
+	    }
 	}
    
 }    
